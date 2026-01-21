@@ -7,7 +7,7 @@ Install_OpenJDK11() {
     yum -y install java-11-openjdk-devel
     JAVA_HOME=/usr/lib/jvm/java-11-openjdk
   elif [ "${Family}" == 'debian' ]; then
-    if [[ "${Debian_ver}" =~ ^12$ ]]; then
+    if [[ "${Debian_ver}" =~ ^12$|^13$ ]]; then
       cat ${current_dir}/src/adoptium.key | sudo apt-key add -
       apt-add-repository --yes https://mirrors.tuna.tsinghua.edu.cn/Adoptium/deb
       apt -y update

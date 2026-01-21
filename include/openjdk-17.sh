@@ -29,7 +29,7 @@ EOF
       JAVA_HOME=/usr/lib/jvm/java-17-openjdk
     fi
   elif [ "${Family}" == 'debian' ]; then
-    if [[ "${Debian_ver}" =~ ^9$|^10$ ]]; then
+    if [[ "${Debian_ver}" =~ ^9$|^10$|^13$ ]]; then
       #wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add -
       cat ${current_dir}/src/adoptium.key | sudo apt-key add -
       apt-add-repository --yes https://mirrors.tuna.tsinghua.edu.cn/Adoptium/deb

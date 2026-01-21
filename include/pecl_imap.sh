@@ -20,7 +20,11 @@ EOF
         [ ! -e /usr/lib/libc-client.so ] && ln -s /usr/lib64/libc-client.so /usr/lib/libc-client.so
       fi
     else
-      apt-get -y install libc-client2007e-dev
+      if [ "${Debian_ver}" == '13' ]; then
+        apt-get -y install libc-client-dev
+      else
+        apt-get -y install libc-client2007e-dev
+      fi
     fi
     phpExtensionDir=$(${php_install_dir}/bin/php-config --extension-dir)
     PHP_detail_ver=$(${php_install_dir}/bin/php-config --version)

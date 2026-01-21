@@ -75,8 +75,8 @@ else
 fi
 
 # Check OS Version
-if [ ${RHEL_ver} -lt 7 >/dev/null 2>&1 ] || [ ${Debian_ver} -lt 9 >/dev/null 2>&1 ] || [ ${Ubuntu_ver} -lt 16 >/dev/null 2>&1 ]; then
-  echo "${CFAILURE}Does not support this OS, Please install CentOS 7+,Debian 9+,Ubuntu 16+ ${CEND}"
+if [ ${RHEL_ver} -lt 7 >/dev/null 2>&1 ] || [ ${Debian_ver} -lt 9 >/dev/null 2>&1 ] || [ ${Debian_ver} -gt 13 >/dev/null 2>&1 ] || [ ${Ubuntu_ver} -lt 16 >/dev/null 2>&1 ]; then
+  echo "${CFAILURE}Does not support this OS, Please install CentOS 7+,Debian 9-13,Ubuntu 16+ ${CEND}"
   kill -9 $$; exit 1;
 fi
 
